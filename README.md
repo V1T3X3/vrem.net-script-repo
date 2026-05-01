@@ -1,0 +1,58 @@
+# VRem.Net-Script-Repository
+This is the repository containing the core scripts behind VRem.Net
+## Description of Each Script
+- ~32DigitLimit.cs~ - not in use.
+- DeletePopulate.cs - Loads the user spawned objects into the deletion page. Attached to the Tablet object.
+- DhcpPool.cs - instantiated by DhcpService.cs representing a DHCP pool. Attached to the Server object.
+- DhcpService.cs - handles instantiating and deleting DHCP pools. Attached to the Server object.
+- IPv4Validation.cs - used for validating input for ipaddresser.cs. Attached as an TMP Input Validator in specific fields.
+- IResettable.cs - C# interface for facilitating object deletion on user spawnable objects. Attached on all deletable objects.
+- ~Mains.cs~ - not in use.
+- PCSummary.cs - handles getting PC configuration information for the summary page in the PC object.
+- RackMounting.cs - handles interaction layer assignment for Rack mountable objects. Attached to the Switch and Server objects.
+- ServerBV.cs - collates and manipulates all attached services in a Server object including IP assignment, Web Services, DNS services, and DHCP services. Attached on the Server object.
+- UniqueID.cs - generates a globally unique ID (GUID) on every object. Each startup of the application generates a new GUID for the object. Attached on all objects.
+- WebService.cs - handles serving and setting image paths for web service. Attached to the Server object.
+- XRSceneFadeIn.cs - handles fade in from black on app startup.
+- callForDestroy.cs - handles disabling all current connections before the object is deleted. Attached to all spawnable objects.
+- castGUID.cs - handles transmitting the object's GUID through the Ethernet cable. Attached on all objects with an Ethernet port.
+- castGUIDHdmi.cs - variant of castGUID.cs for HDMI cables. Attached to the PC object.
+- ~connection.cs~ - not in use.
+- deleteSelectionofVlans.cs - handles deletion of VLANs in Routers. Attached to the Router object.
+- deleteobjs.cs - handles deletion of objects in the scene. Attached to the Tablet object.
+- destroyAndDeleteNames.cs - handles deletion of DNS entries. Attache to the Server object.
+- destroyAndDeleteSwitch.cs - variant of deleteSelectionofVlans.cs for the Switch object. Attached to the Switch object.
+- destroyandDeletePools.cs - deletes DHCP pools. Attached to the Server object.
+- domainName.cs - handles the creation and deletion of DNS entries and handles replies to DNS requests. Attached to the Server object.
+- fader.cs - script that fade-ins or out of black at boot-up and shutdown of app.
+- faderStarter.cs - script that instantiates the fade-in sequence at startup.
+- ~foveator.cs~ - abandoned experimental fixed foveated rendering script. Not in use.
+- getSib.cs - handles the transfer and serving of a connected device's GUID. Attached to the Ethernet Cable object.
+- hasRoute.cs - functionally, used to identify Router objects. Not in use.
+- imagePop.cs - populates the Web Service component of a Server with the available images loaded in C:\Users\*username*\AppData\LocalLow\DefaultCompany\Demo\Sites. Attached to the Server object.
+- ipaddresser.cs - core component script that handles the IPv4 logic of a device. Attached to the PC, Server and Router objects.
+- kill.cs - predecessor to the callForDestroy.cs script. Not in use.
+- lister.cs - contains the list of VLANs in a Switch. Attached to the Switch object.
+- manager.cs - a global script that all objects register to at startup. Any device can call the manager.cs script, input a GUID and it will return the associated object.
+- ~monitorBV.cs~ - not in use. Attached to the Monitor object.
+- nameMapPop.cs - populates the DNS component of Server with the entries stored in the DNS dictionary. Attached to the Server object.
+- pcBV.cs - handles the UI and internal logic of the PC object including IP assignment, DNS lookup, Browser logic, and Pinger logic. Attached to the PC object.
+- poolDeletePop.cs - populates the list view on the deletion page of the DHCP component. Attached to the Server object.
+- poolPop.cs - populates the landing page list view of the DHCP component. Attached to the Server object.
+- portsConfSub.cs - enumerates the subinterfaces into the list view under a Router port. Attached to the Router object.
+- portsconf.cs - enumerates the ports under a Router object. Attached to the Router object.
+- portsconfswitch.cs - enumerates the ports under a Switch object. Attached to the Switch object.
+- quitter.cs - script used to quit the application.
+- recordPop.cs - populates the list view of the DNS component. Attached to the Server object.
+- routerBV.cs - handles the internal logic of a Router including IP assignment of ports, VLAN creation and internetwork routing. Attached to the Router object.
+- routerPort.cs - handles the logic of a Router port including incoming and outgoing requests, and connected devices detection and communication. Attached to the Router object.
+- routerSubInter.cs - script that emulates subinterface logic. Instantiated by RouterBV.cs and assigned under a routerPort.cs. Attached to the Router object.
+- scanHdmi.cs - handles transferring the UI from a PC to the Monitor object. Attached to the Monitor object.
+- scanRack.cs - handles racking behavior on a Rack object including UI transfer, outline visibility, and object selection. Attached to the Rack object.
+- serverSummary.cs - handles getting Server configuration information for the summary page in the Server object.
+- spawnRouter.cs - despite the name, handles the entirety of object spawning in the scene including Routers, PCs, Switches, Racks, etc.
+- switchBV.cs - handles switching and VLAN logic in a Switch object. Attached to the Switch object.
+- togglelight.cs - debugging script that toggles a visible light on the PC. Attached to the PC object.
+- vlan.cs - script handling the status of a port under a Switch. Attached to the Switch object.
+- vlanList.cs - script that holds the GUID of connected objects but the input of these GUID's are handled by the object itself. Attached to the Router and Switch object.
+- vlanPop.cs - enumerates the VLANs that exist in a object in a list view. Attached to the Switch object.
